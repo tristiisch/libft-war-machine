@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    variables.sh                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+         #
+#    By: tglory <tglory@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/23 18:27:13 by jtoty             #+#    #+#              #
-#    Updated: 2021/02/04 07:00:42 by lmartin          ###   ########.fr        #
+#    Updated: 2021/12/07 04:48:47 by tglory           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,20 +72,32 @@ Bonus_func_authorized=('3' '2' '2' '0' '0' '0' '0' '3' '0')
 #              Additional functions               #
 ###################################################
 
-Additional_func=('ft_memccpy.c' 'ft_isblank.c' 'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c' \
+Additional_func=('ft_strequ.c' 'ft_strnequ.c' 'ft_strcat.c' 'ft_memccpy.c' 'ft_isblank.c' \
+'ft_memdel.c' 'ft_striter.c' 'ft_putnbr.c' 'ft_putchar.c' 'ft_strclr.c' \
+'ft_strcmp.c' 'ft_putendl.c' 'ft_strmap.c' 'ft_strncat.c' 'ft_strnew.c' \
+'ft_strcpy.c' 'ft_strdel.c' 'ft_strqu.c' 'ft_putstr.c' 'ft_strncpy.c' \
 'ft_isspace.c' 'ft_isupper.c' 'ft_isxdigit.c' 'ft_str_is_alpha.c' 'ft_str_is_lowercase.c' \
+'ft_iscntrl.c' 'ft_isgraph.c' 'ft_islower.c'  'ft_strstr'\
 'ft_str_is_numeric.c' 'ft_str_is_printable.c' 'ft_str_is_uppercase.c' 'ft_strcapitalize.c' \
 'ft_strcasecmp.c' 'ft_strlowcase.c' 'ft_strndup.c' 'ft_strupcase.c' \
 'ft_itoa_base.c' 'ft_strncasecmp.c' 'ft_strcasestr.c' 'ft_strtok.c')
 
 Additional_func_activation=('0' '0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0' \
+'0' '0' '0' '0' \
+'0' '0' '0' '0' \
 '0' '0' '0' '0' \
 '0' '0' '0' '0' \
 '0' '0' '0' '0')
 
 Additional_func_authorized=('0' '0' '0' '0' '0' \
 '0' '0' '0' '0' '0' \
+'0' '0' '0' '0' '0' \
+'0' '0' '0' '0' \
+'0' '0' '0' '0' \
+'0' '0' '0' '0' \
 '0' '0' '0' '0' \
 '0' '0' '1' '0' \
 '1' '0' '0' '0')

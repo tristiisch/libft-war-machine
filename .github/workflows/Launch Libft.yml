@@ -1,0 +1,77 @@
+name: Unit Test
+
+on: [push, pull_request]
+
+jobs:
+  testers_linux:
+    runs-on: ubuntu-latest
+    name: Tester linux
+    permissions:
+      checks: write
+    env:
+      TERM: linux
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Install Progs for Tester
+        run: |
+          sudo apt update
+          sudo apt-get install -y bash diffutils python3 pip gcc clang build-essential valgrind git
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install norminette
+      - name: Download Libft 125%
+        run: |
+          git clone https://github.com/tristiisch/libft libft
+      - name: Tester WARMACHINE Init
+        run: |
+          bash grademe.sh -u -m
+      - name: Tester WARMACHINE Execute
+        run: |
+          bash grademe.sh -u -m
+        shell: bash
+      - name: Tester WARMACHINE Deepthought
+        run: cat deepthought
+      # - name: all the tests are passed ?
+      #   run: |
+      #     cat deepthought | grep -c KO || true
+
+  testers_macos:
+    runs-on: macos-latest
+    name: Tester macOS
+    env:
+      TERM: xterm-color
+    permissions:
+      checks: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install Homebrew & pyenv
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          /usr/local/bin/brew install pyenv
+          pyenv init
+        continue-on-error: true
+      - name: Install Progs for Tester
+        run: |
+          pyenv install 3.7.9
+          pyenv global 3.7.9
+          python3 -m pip install --upgrade pip setuptools
+          python3 -m pip install norminette
+        continue-on-error: true
+      - name: Download Libft 125%
+        run: |
+          git clone https://github.com/tristiisch/libft libft
+      - name: Tester WARMACHINE Init
+        run: |
+          bash grademe.sh -u -m
+      - name: Tester WARMACHINE Execute
+        run: |
+          bash grademe.sh -u -m
+        shell: bash
+      - name: Tester WARMACHINE Deepthought
+        run: cat deepthought
+      # - name: all the tests are passed ?
+      #   run: |
+      #     cat deepthought | grep -c KO || true
