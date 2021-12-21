@@ -2,7 +2,7 @@ name: 'Usptream Sync of fork'
 
 on:
   schedule:
-    - cron: '0 7 * * 1,3,5*'
+    - cron: '0 7 * * 1,3,5'
     # scheduled At 07:00 on Monday, Wednesday, and Friday.
 
   workflow_dispatch:  # click the button on Github repo!
